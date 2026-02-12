@@ -1,4 +1,4 @@
-const pool = require('../DB/connection');
+import pool from '../DB/connection.js';
 
 class User {
   /**
@@ -83,4 +83,4 @@ class User {
   }
 }
 
-module.exports = User;
+export default User;

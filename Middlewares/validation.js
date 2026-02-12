@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 /**
  * Validation schema for user registration
@@ -107,9 +107,4 @@ function validate(schema) {
   };
 }
 
-module.exports = {
-  registerSchema,
-  loginSchema,
-  updateSchema,
-  validate
-};
+export { registerSchema, loginSchema, updateSchema, validate };

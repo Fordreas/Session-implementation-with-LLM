@@ -1,10 +1,16 @@
-const express = require('express');
-const session = require('express-session');
-const path = require('path');
-require('dotenv').config();
+import express from 'express';
+import session from 'express-session';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Import router
-const router = require('./router');
+import router from './router.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Initialize express app
 const app = express();

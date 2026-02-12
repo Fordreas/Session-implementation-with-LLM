@@ -20,7 +20,4 @@ function redirectIfAuth(req, res, next) {
   }
 }
 
-module.exports = {
-  requireAuth,
-  redirectIfAuth
-};
+export { requireAuth, redirectIfAuth };

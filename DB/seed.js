@@ -1,4 +1,4 @@
-const pool = require('./connection');
+import pool from './connection.js';
 
 async function seedDatabase() {
   try {

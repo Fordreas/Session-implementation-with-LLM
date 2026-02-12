@@ -1,13 +1,13 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 // Import controllers
-const AuthController = require('./Controllers/AuthController');
-const UserController = require('./Controllers/UserController');
+import AuthController from './Controllers/AuthController.js';
+import UserController from './Controllers/UserController.js';
 
 // Import middlewares
-const { requireAuth, redirectIfAuth } = require('./Middlewares/auth');
-const { validate, registerSchema, loginSchema, updateSchema } = require('./Middlewares/validation');
+import { requireAuth, redirectIfAuth } from './Middlewares/auth.js';
+import { validate, registerSchema, loginSchema, updateSchema } from './Middlewares/validation.js';
 
 // Public routes
 router.get('/', redirectIfAuth, AuthController.showHome);
@@ -22,4 +22,4 @@ router.get('/profile', requireAuth, UserController.showProfile);
 router.post('/profile/update', requireAuth, validate(updateSchema), UserController.updateProfile);
 router.get('/logout', requireAuth, AuthController.logout);
 
-module.exports = router;
+export default router;
