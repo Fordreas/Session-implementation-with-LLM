@@ -1,0 +1,23 @@
+{
+  "name": "session-mvc-app",
+  "version": "1.0.0",
+  "description": "MVC application with user authentication and sessions",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "db:reset": "node DB/reset.js",
+    "db:seed": "node DB/seed.js"
+  },
+  "keywords": ["mvc", "express", "sessions", "authentication"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "joi": "^17.13.3",
+    "pg": "^8.13.1"
+  }
+}

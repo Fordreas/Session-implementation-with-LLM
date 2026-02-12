@@ -1,0 +1,61 @@
+<%- include('header') %>
+
+<header>
+  <h1>🔐 Session MVC App</h1>
+  <nav>
+    <a href="/profile">Profile</a>
+    <a href="/logout">Logout</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <h2>👤 Your Profile</h2>
+
+    <% if (success) { %>
+      <div class="success"><%= success %></div>
+    <% } %>
+
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+
+    <div class="info">
+      <strong>Username:</strong> <%= user.username %>
+    </div>
+
+    <form action="/profile/update" method="POST">
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" value="<%= user.email %>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password *</label>
+        <input type="password" id="password" name="password" value="<%= user.password %>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" value="<%= user.firstname || '' %>">
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" value="<%= user.lastname || '' %>">
+      </div>
+
+      <button type="submit">Update Profile</button>
+    </form>
+
+    <div style="margin-top: 1rem; text-align: center;">
+      <small style="color: #666;">Account created: <%= new Date(user.created_at).toLocaleDateString() %></small>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Session MVC App. All rights reserved.</p>
+</footer>
+
+<%- include('footer') %>
